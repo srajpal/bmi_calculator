@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -23,7 +24,8 @@ class BMIModel {
     final int hour = date.hour;
     final int minute = date.minute;
 
-    return '$month/$day/$year $hour:$minute';
+    //return '$month/$day/$year $hour:$minute';
+    return DateFormat.yMMMMd().add_jm().format(date);
   }
 
   @override
